@@ -6,6 +6,14 @@ Flutter QQ Login Plugin
 |-------------|---------|-------|
 | **Support** | SDK 19+ | 11.0+ |
 
+<p>
+  <img src="https://github.com/yechong/flutter_qq_login/blob/main/doc/images/android.gif?raw=true"
+    alt="An animated image of the iOS QQ Login Plugin UI" height="400"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/yechong/flutter_qq_login/blob/main/doc/images/iphone.gif?raw=true"
+   alt="An animated image of the Android QQ Login Plugin UI" height="400"/>
+</p>
+
 [中文请移步此处](./README_CN.md)
 
 ## Getting Started
