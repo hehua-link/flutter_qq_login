@@ -16,9 +16,18 @@ Flutter QQ Login Plugin
 
 [中文请移步此处](./README_CN.md)
 
-## Features
+## 前言
 
+使用此插件前，强力建议详细阅读官方文档
+- [Android应用](https://wiki.connect.qq.com/qq%e7%99%bb%e5%bd%95)
+- [iOS应用](https://wiki.connect.qq.com/ios_sdk%e7%8e%af%e5%a2%83%e6%90%ad%e5%bb%ba)
 
+## 功能
+
+此插件已集成QQ登录的功能：
+- 判断是否已安装QQ APP `isQQInstalled()`
+- 登录成功后获取的数据 `其中包含OpenId， AccessToken等重要数据`
+- 获取用户信息 `getUserInfo()`
 
 ## Getting Started
 
