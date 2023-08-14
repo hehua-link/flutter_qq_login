@@ -1,3 +1,6 @@
+## 0.0.3
+* Improve LICENSE
+
 ## 0.0.2
 * Improve documentation
 
