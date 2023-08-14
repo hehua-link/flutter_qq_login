@@ -16,6 +16,10 @@ Flutter QQ Login Plugin
 
 [中文请移步此处](./README_CN.md)
 
+## Features
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter
