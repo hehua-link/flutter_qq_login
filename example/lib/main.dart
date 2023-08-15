@@ -93,12 +93,19 @@ class _MyAppState extends State<MyApp> {
     }
     Map<String, dynamic> tempQqInfo = await _flutterQqLogin.login();
     print('flutter_qq_plugin -> qqInfo = $tempQqInfo');
-    Map<String, dynamic> tempUserInfo = await _flutterQqLogin.getUserInfo(tempQqInfo['access_token'], tempQqInfo['openid']);
-    print('flutter_qq_plugin -> userInfo = $tempUserInfo');
-    if (mounted) {
+    if (tempQqInfo.containsKey("ret") && tempQqInfo['ret'] == 0) {
+      Map<String, dynamic> tempUserInfo = await _flutterQqLogin.getUserInfo(tempQqInfo['access_token'], tempQqInfo['openid']);
+      print('flutter_qq_plugin -> userInfo = $tempUserInfo');
+      if (mounted) {
+        setState(() {
+          qqInfo = tempQqInfo;
+          userInfo = tempUserInfo;
+          startLogin = false;
+        });
+      }
+    }
+    else {
       setState(() {
-        qqInfo = tempQqInfo;
-        userInfo = tempUserInfo;
         startLogin = false;
       });
     }
