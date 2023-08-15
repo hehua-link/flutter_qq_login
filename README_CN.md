@@ -190,6 +190,16 @@ android {
 ```
 
 
+## 捐助
+开源不易，请作者喝杯咖啡。
+<p>
+  <img src="https://github.com/yechong/flutter_qq_login/blob/main/doc/images/wechat_qrcode.jpg?raw=true"
+    alt="An animated image of the iOS QQ Login Plugin UI" height="400"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/yechong/flutter_qq_login/blob/main/doc/images/alipay_qrcode.jpg?raw=true"
+   alt="An animated image of the Android QQ Login Plugin UI" height="400"/>
+</p>
+
 
 ## LICENSE
 
