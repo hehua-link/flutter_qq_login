@@ -51,6 +51,14 @@ Map<String, dynamic> userInfo = await flutterQqLogin.getUserInfo(qqInfo['access_
 
 ```
 
+#### Interface `login()` status code description
+- Normally, the interface will at least return the `ret` property:
+    - `0` authorization login successful, and there must be important data such as `accessToken` at this time
+    - `-1` authorization login failed, unable to obtain `accessToken` and other important data
+    - `-2` cancel login authorization (that is, after jumping to QQ, click cancel and then jump back)
+    - `-3` network exception
+
+
 ### Configure Android version
 
 Configure `android/app/build.gradle`

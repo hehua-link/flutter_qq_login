@@ -49,6 +49,15 @@ Map<String, dynamic> userInfo = await flutterQqLogin.getUserInfo(qqInfo['access_
 
 ```
 
+
+#### 接口  `login()` 状态码说明
+- 正常情况下，该接口至少会返回 `ret` 属性：
+    - `0` 授权登录成功，此时一定会有 `accessToken` 等重要数据
+    - `-1` 授权登录失败，无法获取 `accessToken` 等重要数据
+    - `-2` 取消登录授权（即跳转到QQ后，点击了取消再跳回来）
+    - `-3` 网络异常
+
+
 ### 配置Android版本
 
 配置 `android/app/build.gradle`
