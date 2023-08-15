@@ -72,6 +72,11 @@
     return [TencentOAuth HandleOpenURL:url];
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    NSLog(@"---handleOpenURL3---");
+    return [TencentOAuth HandleOpenURL:url];
+}
+
 - (void)tencentDidLogin {
     NSLog(@"---tencentDidLogin---");
     NSLog(@"accessToken=%@ openid=%@", self._tencentOAuth.accessToken, self._tencentOAuth.openId);
