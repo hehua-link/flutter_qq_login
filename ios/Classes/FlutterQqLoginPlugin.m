@@ -91,6 +91,7 @@
         long long timestampInMilliseconds = (long long)(timestampInSeconds * 1000);
         
         NSDictionary *dictionary = @{
+            @"ret": @(0),
             @"access_token": self._tencentOAuth.accessToken,
             @"openid": self._tencentOAuth.openId,
             @"expire_date": @(timestampInMilliseconds)
@@ -101,23 +102,42 @@
         if (jsonString && jsonString.length > 0) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 if (self.loginCallback) {
-                    self.loginCallback(jsonString); // 传递nil表示登录成功
+                    self.loginCallback(jsonString);
                     self.loginCallback = nil; // 清空回调
                 }
             });
         }
     }
     else {
-        
+        [self failedLogin:-1];  // 登录失败，无法获取accessToken
     }
 }
 
 - (void)tencentDidNotLogin:(BOOL)cancelled {
     NSLog(@"---tencentDidNotLogin--- %d", cancelled);
+    
+    [self failedLogin:-2];  // 登录失败，取消登录
 }
 
 - (void)tencentDidNotNetWork {
     NSLog(@"---tencentDidNotNetWork---");
+    
+    [self failedLogin:-3];  // 登录失败，网络异常
+}
+
+- (void)failedLogin:(NSInteger)code {
+    NSDictionary *dictionary = @{
+        @"ret": @(code)
+    };
+            
+    NSString *jsonString = [self convertToJsonString:dictionary];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (self.loginCallback) {
+            self.loginCallback(jsonString);
+            self.loginCallback = nil; // 清空回调
+        }
+    });
 }
 
 - (void)getUserInfoResponse:(APIResponse *)response {
@@ -135,8 +155,8 @@
                 }
             });
         }
-        
-    } else {
+    }
+    else {
         NSDictionary *dictionary = @{
             @"retCode": @(response.retCode),
             @"errorMsg": response.errorMsg

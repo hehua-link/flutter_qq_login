@@ -14,6 +14,7 @@ import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -133,16 +134,48 @@ public class FlutterQqLoginPlugin implements FlutterPlugin, MethodCallHandler,
     @Override
     public void onError(UiError uiError) {
         Log.e("flutter_qq_login", "onError -> errorCode=" + uiError.errorCode + " errorMessage=" + uiError.errorMessage + " errorDetail=" + uiError.errorDetail);
+        if (this.loginResult != null) {
+            try {
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("ret", uiError.errorCode);
+                jsonObject.put("errorMessage", uiError.errorMessage);
+                jsonObject.put("errorDetail", uiError.errorDetail);
+                this.loginResult.success(jsonObject.toString());
+                this.loginResult = null;
+            } catch (JSONException e) {
+                Log.i("flutter_qq_login", e.getMessage(), e);
+            }
+        }
     }
 
     @Override
     public void onCancel() {
         Log.i("flutter_qq_login", "onCancel");
+        if (this.loginResult != null) {
+            try {
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("ret", -2);
+                this.loginResult.success(jsonObject.toString());
+                this.loginResult = null;
+            } catch (JSONException e) {
+                Log.i("flutter_qq_login", e.getMessage(), e);
+            }
+        }
     }
 
     @Override
     public void onWarning(int i) {
         Log.w("flutter_qq_login", "onWarning-> " + i);
+        try {
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("ret", -3);
+            jsonObject.put("errorMessage", "warning");
+            jsonObject.put("errorDetail", i);
+            this.loginResult.success(jsonObject.toString());
+            this.loginResult = null;
+        } catch (JSONException e) {
+            Log.i("flutter_qq_login", e.getMessage(), e);
+        }
     }
 
     @Override
