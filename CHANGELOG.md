@@ -1,3 +1,7 @@
+## 0.0.5
+* Fixed bugs.
+* IOS and Android unified return ret status code
+
 ## 0.0.4
 * Fixed iOS qq callback bug.
 
