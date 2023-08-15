@@ -1,6 +1,6 @@
 ## 0.0.4
 * Fixed iOS qq callback bug.
-* 
+
 ## 0.0.3
 * Improve LICENSE
 
