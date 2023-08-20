@@ -195,10 +195,10 @@ Configure `LSApplicationQueriesSchemes`
 Buy the writer a cup of coffee
 <p>
   <img src="https://github.com/yechong/flutter_qq_login/blob/main/doc/images/wechat_qrcode.jpg?raw=true"
-    alt="An animated image of the iOS QQ Login Plugin UI" height="400"/>
+    alt="WeChat payment QR code" height="400"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/yechong/flutter_qq_login/blob/main/doc/images/alipay_qrcode.jpg?raw=true"
-   alt="An animated image of the Android QQ Login Plugin UI" height="400"/>
+   alt="Alipay collection QR code" height="400"/>
 </p>
 
 

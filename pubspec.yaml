@@ -1,6 +1,6 @@
 name: flutter_qq_login
-description: Flutter QQ Login Plugin
-version: 0.0.5
+description: A plugin that integrates QQ login, supports android and iOS platforms, and is easy to use. Nevertheless, I strongly recommend that you read the official documentation and the README of this plugin in detail.
+version: 0.0.6
 repository: https://github.com/yechong/flutter_qq_login
 homepage:
 
@@ -12,8 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  yaml: ^3.1.2
-  path: ^1.8.3
 
 dev_dependencies:
   flutter_test:
