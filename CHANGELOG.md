@@ -1,3 +1,6 @@
+## 0.0.7
+* Optimized code
+
 ## 0.0.6
 * Improve documentation
 

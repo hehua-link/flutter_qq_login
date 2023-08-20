@@ -16,8 +16,7 @@ class MethodChannelFlutterQqLogin extends FlutterQqLoginPlatform {
 
   @override
   Future<bool> isInstalled() async {
-    final _isInstalled = await methodChannel.invokeMethod<bool>('isInstalled') ?? false;
-    return _isInstalled;
+    return await methodChannel.invokeMethod<bool>('isInstalled') ?? false;
   }
 
   @override
