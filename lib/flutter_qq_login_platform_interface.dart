@@ -23,18 +23,22 @@ abstract class FlutterQqLoginPlatform extends PlatformInterface {
     _instance = instance;
   }
 
+  /// init qq plugin
   Future<void> init(String appId) {
     throw UnimplementedError('init() has not been implemented.');
   }
 
+  /// check qq app is installed
   Future<bool> isInstalled() {
     throw UnimplementedError('isInstalled() has not been implemented.');
   }
 
+  /// auth qq app
   Future<String?> login() {
     throw UnimplementedError('login() has not been implemented.');
   }
 
+  /// get qq user info
   Future<String?> getUserInfo(String accessToken, String openid) {
     throw UnimplementedError('getUserInfo() has not been implemented.');
   }
