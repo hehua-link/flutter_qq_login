@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> initData() async {
 
-    _flutterQqLogin.init(appId: "_Your_app_id_");
+    _flutterQqLogin.init(appId: "102788708");
     bool isInstalled = await _flutterQqLogin.isInstalled();
 
     // If the widget was removed from the tree while the asynchronous platform
